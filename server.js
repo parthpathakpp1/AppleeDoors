@@ -23,7 +23,7 @@ app.use("/api/v1/product", (req, res, next) => {
     res.setHeader("Cache-Control", "no-store, max-age=0"); // Disable caching
     next();
   }, productRoutes);
-  app.use(express.static(path.join(__dirname, './client/build')))
+  app.use(express.static(path.join(__dirname, './client/dist')))
   
 
 
@@ -33,7 +33,7 @@ app.use("/api/v1/category",categoryRoutes);
 app.use("/api/v1/product",productRoutes);
 
 app.use("*", function (req, res) {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
+    res.sendFile(path.join(__dirname, './client/dist/index.html'));
 });
 
 app.get('/', (req, res) => {
