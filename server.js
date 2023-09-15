@@ -23,7 +23,8 @@ app.use("/api/v1/product", (req, res, next) => {
     res.setHeader("Cache-Control", "no-store, max-age=0"); // Disable caching
     next();
   }, productRoutes);
-  app.use(express.static(path.join(__dirname, './client/dist')))
+ app.use(express.static(path.join(__dirname, '/client/dist')));
+
   
 
 
